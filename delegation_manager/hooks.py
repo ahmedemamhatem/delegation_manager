@@ -17,8 +17,12 @@ doc_events = {
         "before_insert": "delegation_manager.utils.doc_delegate_update",
         "validate": "delegation_manager.utils.doc_delegate_update",
         "before_update_after_submit": "delegation_manager.utils.doc_delegate_update"
+    },
+    "Activity Log": {
+        "after_insert": "delegation_manager.utils.after_insert_activity_log"
     }
 }
+
 
 scheduler_events = {
     "daily": [

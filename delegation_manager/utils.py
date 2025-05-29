@@ -1,5 +1,24 @@
 import frappe
 
+import frappe
+
+def after_insert_activity_log(doc, method=None):
+    """
+    After Activity Log insert, if operation is Login/Logout/Impersonate
+    and user matches Delegatee, update Delegation via SQL.
+    """
+    if doc.operation not in ("Login", "Logout", "Impersonate"):
+        return
+
+    frappe.db.sql("""
+        UPDATE `tabDelegation`
+        SET `current_user` = NULL,
+            logged = 0
+        WHERE delegatee = %s
+          AND docstatus = 1
+    """, (doc.user,))
+
+
 def doc_delegate_update(doc, method=None):
     """
     Frappe hook: on insert, validate, and update, reassigns owner and/or modifier

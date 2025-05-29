@@ -54,6 +54,9 @@ def create_message_rule(delegation: str) -> Dict[str, Any]:
         return {"message": "Email Delegation automation is disabled in settings."}
 
     delegation_doc = frappe.get_doc("Delegation", delegation)
+    if delegation_doc.email_forwarded:
+        return {"message": "Email forwarding rule already exists."}
+    
     token = get_access_token()
 
     url = f"https://graph.microsoft.com/v1.0/users/{delegation_doc.delegatee}/mailFolders/inbox/messageRules"
