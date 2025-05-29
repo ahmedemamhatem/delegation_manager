@@ -8,7 +8,24 @@ app_license = "mit"
 # Apps
 # ------------------
 
+#app_include_js = ["delegation_manager/public/js/delegation_switcher.js"]
+
 # required_apps = []
+
+doc_events = {
+    "*": {
+        "before_insert": "delegation_manager.utils.doc_delegate_update",
+        "validate": "delegation_manager.utils.doc_delegate_update",
+        "before_update_after_submit": "delegation_manager.utils.doc_delegate_update"
+    }
+}
+
+scheduler_events = {
+    "daily": [
+        "delegation_manager.email.handle_delegation_rules"
+    ]
+}
+
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -26,7 +43,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/delegation_manager/css/delegation_manager.css"
-# app_include_js = "/assets/delegation_manager/js/delegation_manager.js"
+app_include_js = "/assets/delegation_manager/js/delegation_switcher.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/delegation_manager/css/delegation_manager.css"

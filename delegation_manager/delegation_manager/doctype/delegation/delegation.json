@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DLG-.YYYY.-.####",
+ "creation": "2025-05-28 12:57:36.962905",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_tubo",
+  "naming_series",
+  "delegator",
+  "delegatee",
+  "amended_from",
+  "column_break_perd",
+  "start_date",
+  "end_date",
+  "current_user",
+  "logged",
+  "section_break_hpbb",
+  "email_forwarded",
+  "response",
+  "column_break_eiwh",
+  "email_forwarded_id",
+  "email_ids",
+  "section_break_qccq",
+  "delegation_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_tubo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "DLG-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "naming_series:",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "description": "The user who is delegating their permissions",
+   "fieldname": "delegator",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Delegator",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "description": "The user who will act on behalf of the delegator",
+   "fieldname": "delegatee",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Delegatee",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Delegation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_perd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "The user who is delegating their permissions",
+   "fieldname": "current_user",
+   "fieldtype": "Link",
+   "label": "Current User",
+   "no_copy": 1,
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "logged",
+   "fieldtype": "Check",
+   "label": "Logged",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_qccq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "delegation_log",
+   "fieldtype": "Table",
+   "label": "Delegation Log",
+   "no_copy": 1,
+   "options": "Delegation Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_hpbb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_forwarded",
+   "fieldtype": "Check",
+   "label": "Email Forwarded",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_eiwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "email_forwarded_id",
+   "fieldtype": "Data",
+   "label": "Email Forwarded ID",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "response",
+   "fieldtype": "Small Text",
+   "label": "response",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "email_ids",
+   "fieldtype": "Small Text",
+   "label": "Email IDs",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-29 11:30:26.032664",
+ "modified_by": "Administrator",
+ "module": "Delegation Manager",
+ "name": "Delegation",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

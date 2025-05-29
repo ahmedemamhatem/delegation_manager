@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-29 10:25:59.750593",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "is_active",
+  "grant_type",
+  "scope",
+  "column_break_kycw",
+  "client_id",
+  "client_secret",
+  "tenant_id"
+ ],
+ "fields": [
+  {
+   "default": "client_credentials",
+   "description": "\tUsually client_credentials or authorization_code",
+   "fieldname": "grant_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Grant Type\t",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kycw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "From Azure App Registration\n",
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client ID\t",
+   "reqd": 1
+  },
+  {
+   "description": "From Azure App Registration\n",
+   "fieldname": "client_secret",
+   "fieldtype": "Data",
+   "label": "Client Secret",
+   "reqd": 1
+  },
+  {
+   "default": "https://graph.microsoft.com/.default",
+   "description": "e.g. https://graph.microsoft.com/.default\n",
+   "fieldname": "scope",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scope",
+   "reqd": 1
+  },
+  {
+   "description": "Azure Tenant ID\n",
+   "fieldname": "tenant_id",
+   "fieldtype": "Data",
+   "label": "Directory (Tenant) ID\t",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active\t"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-05-29 10:35:17.671576",
+ "modified_by": "Administrator",
+ "module": "Delegation Manager",
+ "name": "Email Delegation Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
