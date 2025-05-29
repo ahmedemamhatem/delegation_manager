@@ -1,5 +1,5 @@
 
-# 📧 Email Delegation App for Frappe
+# 📧 Email and User Delegation App for Frappe
 
 **Secure and auditable delegation of email inboxes and user operations in Frappe.**  
 This app enables time-bound delegation between users with seamless Microsoft Graph API integration and a traceable, self-service experience.
