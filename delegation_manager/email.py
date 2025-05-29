@@ -3,6 +3,7 @@ import frappe
 import json
 from frappe.utils import today
 from typing import Any, Dict, Optional, List
+from frappe.utils import nowdate, getdate
 
 def reset_email_forwarding_fields(doc: frappe.model.document.Document) -> None:
     """
@@ -56,6 +57,12 @@ def create_message_rule(delegation: str) -> Dict[str, Any]:
     delegation_doc = frappe.get_doc("Delegation", delegation)
     if delegation_doc.email_forwarded:
         return {"message": "Email forwarding rule already exists."}
+    today = getdate(nowdate())
+    if delegation_doc.end_date and getdate(delegation_doc.end_date) < today:
+        return {"message": "Delegation period has ended."}
+    
+    if delegation_doc.start_date and getdate(delegation_doc.start_date) > today:
+        return {"message": "Delegation period has not started yet."}
     
     token = get_access_token()
 
